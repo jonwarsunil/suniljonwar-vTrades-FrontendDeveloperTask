@@ -1,12 +1,68 @@
-# React + Vite
+# vTrades – Frontend Developer Task by Sunil Jonwar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Task Overview
 
-Currently, two official plugins are available:
+This project is developed as part of the **Frontend Developer Task** assigned by the vTrades team.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔹 Task Requirements:
 
-## Expanding the ESLint configuration
+- Build authentication pages using **React.js** and **Tailwind CSS**
+- Create **mock API** (or hardcoded response handling)
+- Handle proper **error states** and **form validation**
+- Implement complete user flows:
+  - Sign In
+  - Sign Up
+  - Forgot Password
+  - OTP Verification
+  - Create New Password
+  - Dashboard
+- Use **Google/Microsoft Sign-In** (if possible)
+- Ensure mobile responsiveness down to 320px
+- Use reusable components for Input, Button, Modal, Layout, etc.
+- Code should be well-commented and hosted publicly on GitHub and Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✅ Functionality Implemented
+
+- 🔐 **Authentication Pages**:
+  - Sign In with validation and error handling
+  - Sign Up with password confirmation
+  - Forgot Password form with OTP trigger
+  - OTP verification flow using `react-otp-input`
+  - Create new password after verification
+  - Dashboard with Logout functionality
+  - **Mock API simulation** using `localStorage` to mimic server responses
+  - **Fully responsive UI** – Mobile, Tablet, Desktop
+  - **Form validation** using `Formik` and `Yup`
+  - **Reusable components**: Input, Button, Spinner, Modal, Layout
+  - Google/Microsoft login buttons added (auth not wired due to Firebase quota)
+  - **Routing** handled using `react-router-dom`
+  - Lazy loading via `React.lazy` and `Suspense`
+
+---
+
+## 🚀 Live Preview
+
+- **Hosted on Vercel**: [https://suniljonwar-v-trades-frontend-devel.vercel.app/]
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js (Vite)
+- **Styling**: Tailwind CSS
+- **Routing**: React Router v7
+- **Form Handling**: Formik + Yup
+- **OTP Input**: react-otp-input
+- **State Management**: useState, useEffect (React Hooks)
+- **Mock APIs**: `localStorage` for persistence
+
+---
+
+## 📦 How to Run Locally
+
+```bash
+git clone https://github.com/jonwarsunil/suniljonwar-vTrades-FrontendDeveloperTask.git
+cd  suniljonwar-vTrades-FrontendDeveloperTask
+npm install
+npm run dev
+```
