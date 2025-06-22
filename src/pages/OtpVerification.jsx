@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import OtpInput from 'react18-input-otp';
+import OtpInput from 'react-otp-input';
 import Button from '../components/Button';
 import AuthLayout from '../layout/AuthLayout';
 import { verifyOtp } from '../api/api';
@@ -39,19 +39,44 @@ const OtpVerification = () => {
     }
   };
 
+  const baseInputStyle = {
+    width: '48px',
+    height: '48px',
+    margin: '0 8px',
+    borderRadius: '8px',
+    backgroundColor: '#1D1E26',
+    border: '1px solid #30303D',
+    color: 'white',
+    fontSize: '18px',
+    textAlign: 'center',
+  };
+
+  // Optional: responsive tweak for small screens
+  const responsiveInputStyle =
+    window.innerWidth <= 768
+      ? {
+          width: '38px',
+          height: '38px',
+          margin: '4px',
+          fontSize: '16px',
+        }
+      : {};
+
   return (
     <AuthLayout title='Enter OTP' subtext={`We’ve sent a 6-digit OTP to your email: ${email}`}>
       <div className='w-full max-w-[385px] mb-6'>
-        <OtpInput
-          value={otp}
-          onChange={setOtp}
-          numInputs={6}
-          inputStyle='otp-input'
-          containerStyle='otp-container'
-          shouldAutoFocus
-        />
-        {error && <p className='text-red-500 text-sm mt-2'>{error}</p>}
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <OtpInput
+            value={otp}
+            onChange={setOtp}
+            numInputs={6}
+            shouldAutoFocus
+            renderInput={props => <input {...props} style={{ ...baseInputStyle, ...responsiveInputStyle }} />}
+          />
+        </div>
+        {error && <p className='text-red-500 text-sm mt-2 text-center'>{error}</p>}
       </div>
+
       <Button onClick={handleVerify} disabled={loading}>
         {loading ? 'Verifying...' : 'Verify OTP'}
       </Button>
