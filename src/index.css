@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import 'tailwindcss';
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #17181e;
+}
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.otp-input {
+  width: 48px !important;
+  height: 48px !important;
+  margin: 0 8px !important;
+  border-radius: 8px !important;
+  background-color: #1d1e26 !important;
+  border: 1px solid #30303d !important;
+  color: white !important;
+  font-size: 18px !important;
+  text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  .otp-input {
+    width: 38px !important;
+    height: 38px !important;
+    margin: 4px !important;
+    font-size: 16px !important;
+  }
+}
+
+.otp-container {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
